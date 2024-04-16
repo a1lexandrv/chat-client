@@ -1,14 +1,14 @@
+@import './_normalize.scss';
+@import './_reset.scss';
+@import './_mixins.scss';
+
 html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     max-width: 1440px;
-    height: 100vh;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #eeeeee;
     color: #232931;
 }

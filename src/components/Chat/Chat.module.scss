@@ -1,11 +1,33 @@
+@import '../../styles/mixins';
+
 .chat {
-    width: 60vw;
-    // height: 60vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 800px;
+    height: 80vh;
     color: #eeeeee;
+    padding: 16px 48px;
+
+    @include respond(tab-phone) {
+        height: 96vh;
+        padding: 16px 8px;
+        margin: unset;
+        max-width: unset;
+    }
 }
 
 .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 16px;
     padding: 16px 24px;
     border: 2px solid #dddddd;
     border-radius: 16px;
+
+    @include respond(tab-phone) {
+        padding: 16px 8px;
+    }
 }
