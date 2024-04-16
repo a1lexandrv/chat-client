@@ -7,7 +7,8 @@ import Messages from '../Messages/Messages';
 import Header from '../Header/Header';
 import SendMessage from '../SendMessage/SendMessage';
 
-const socket = io.connect('http://localhost:5000');
+// const socket = io.connect('http://localhost:5000');
+const socket = io.connect('https://chat-client-roan-zeta.vercel.app/');
 
 export default function Chat() {
     const { search } = useLocation();
