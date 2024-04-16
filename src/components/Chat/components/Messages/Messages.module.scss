@@ -1,4 +1,4 @@
-@import '../../styles/mixins';
+@import '../../../../styles/mixins';
 
 .messages {
     flex-grow: 1;
@@ -12,6 +12,7 @@
 
 .message {
     max-width: 80%;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -34,6 +35,11 @@
     font-size: 14px;
     padding-left: 8px;
     color: #232931;
+
+    @include respond(tab-phone) {
+        font-size: 12px;
+        max-width: 90%;
+    }
 }
 
 .text {
@@ -51,4 +57,8 @@
     width: fit-content;
     align-self: center;
     font-size: 14px;
+
+    @include respond(tab-phone) {
+        font-size: 12px;
+    }
 }

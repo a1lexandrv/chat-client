@@ -40,6 +40,7 @@ export default function Join() {
                     value={values[NAME]}
                     onChange={handleChange}
                     autoComplete="off"
+                    autoFocus
                     required
                 ></input>
                 <input

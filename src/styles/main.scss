@@ -1,6 +1,7 @@
 @import './_normalize.scss';
 @import './_reset.scss';
 @import './_mixins.scss';
+@import './mixins.scss';
 
 html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,6 +12,18 @@ body {
     margin: 0 auto;
     background-color: #eeeeee;
     color: #232931;
+
+    @include respond(tab-phone) {
+        font-size: 14px;
+    }
+}
+
+h1 {
+    font-size: 32px;
+
+    @include respond(tab-phone) {
+        font-size: 26px;
+    }
 }
 
 input {
