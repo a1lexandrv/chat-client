@@ -1,0 +1,28 @@
+.header {
+    padding: 16px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    color: #232931;
+}
+
+.title {
+    font-size: 32px;
+}
+
+.users {
+    text-align: center;
+}
+
+.button {
+    width: fit-content;
+    padding: 16px;
+    border-radius: 16px;
+    border: none;
+    background-color: #232931;
+    color: #eeeeee;
+    font-weight: bold;
+    margin-left: auto;
+    cursor: pointer;
+}

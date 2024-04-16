@@ -1,0 +1,45 @@
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 60vh;
+    overflow: scroll;
+    color: #232931;
+    margin-bottom: 16px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.me {
+    align-self: flex-end;
+
+    .text {
+        background-color: #fffdd2;
+    }
+}
+
+.name {
+    font-size: 14px;
+    padding-left: 8px;
+    color: #232931;
+}
+
+.text {
+    padding: 10px 12px;
+    border-radius: 8px;
+    width: fit-content;
+    background-color: #cba4f1;
+}
+
+.serviceMessage {
+    background-color: #dddddd;
+    padding: 8px 16px;
+    border-radius: 24px;
+    width: fit-content;
+    align-self: center;
+    font-size: 14px;
+}
