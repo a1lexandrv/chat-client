@@ -8,7 +8,7 @@ import Header from '../Header/Header';
 import SendMessage from '../SendMessage/SendMessage';
 
 // const socket = io.connect('http://localhost:5000');
-const socket = io.connect('https://chat-client-roan-zeta.vercel.app/');
+const socket = io.connect('https://chat-server-k0w1.onrender.com');
 
 export default function Chat() {
     const { search } = useLocation();
