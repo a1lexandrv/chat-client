@@ -5,6 +5,12 @@ export default function Messages({ socket, params }) {
     const [messages, setMessages] = useState([]);
     const messagesEndRef = useRef(null);
 
+    const removeMessage = (messageId, params) => {
+        setMessages(messages.filter((message) => message.id !== messageId));
+
+        socket.emit('removeMessage', { messageId, params });
+    };
+
     const scrollToBottom = () => {
         if (messagesEndRef.current) {
             messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -12,14 +18,20 @@ export default function Messages({ socket, params }) {
     };
 
     useEffect(() => {
-        scrollToBottom();
-    }, [messages]);
-
-    useEffect(() => {
         socket.on('message', ({ data }) => {
             setMessages((prevState) => [...prevState, data]);
         });
     }, []);
+
+    useEffect(() => {
+        socket.on('messageHistory', ({ data }) => {
+            setMessages(data);
+        });
+    }, []);
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
 
     return (
         <div className={styles.messages}>
@@ -32,17 +44,18 @@ export default function Messages({ socket, params }) {
 
                 return user.name === 'Admin' ? (
                     <span key={index} className={styles.serviceMessage}>
-                        {message}
+                        {message.text}
                     </span>
                 ) : (
                     <div
-                        key={index}
+                        key={message.id}
                         className={`${styles.message} ${className}`}
+                        onClick={() => removeMessage(message.id, user)}
                     >
                         {!isMe && (
                             <span className={styles.name}>{user.name}</span>
                         )}
-                        <div className={styles.text}>{message}</div>
+                        <div className={styles.text}>{message.text}</div>
                     </div>
                 );
             })}
