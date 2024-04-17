@@ -7,8 +7,8 @@ import Messages from './components/Messages/Messages';
 import Header from './components/Header/Header';
 import SendMessage from './components/SendMessage/SendMessage';
 
-const socket = io.connect('http://localhost:5000');
-// const socket = io.connect('https://chat-server-k0w1.onrender.com');
+// const socket = io.connect('http://localhost:5000');
+const socket = io.connect('https://chat-server-k0w1.onrender.com');
 
 export default function Chat() {
     const { search } = useLocation();
